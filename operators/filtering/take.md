@@ -36,7 +36,7 @@ number of emissions while `skip` will skip the first _n_ number of emissions.
 
 ```js
 import { of } from 'rxjs/observable/of';
-import { take } 'rxjs/operators';
+import { take } from 'rxjs/operators';
 
 //emit 1,2,3,4,5
 const source = of(1, 2, 3, 4, 5);
@@ -53,7 +53,7 @@ const subscribe = example.subscribe(val => console.log(val));
 
 ```js
 import { interval } from 'rxjs/observable/interval';
-import { take } 'rxjs/operators';
+import { take } from 'rxjs/operators';
 
 //emit value every 1s
 const interval = interval(1000);
@@ -63,7 +63,7 @@ const example = interval.pipe(take(5));
 const subscribe = example.subscribe(val => console.log(val));
 ```
 
-##### Example 3: Taking first click loclation
+##### Example 3: Taking first click location
 
 ([jsFiddle](https://jsfiddle.net/ElHuy/9c5j064x/))
 
@@ -75,7 +75,7 @@ const subscribe = example.subscribe(val => console.log(val));
 
 ```js
 import { fromEvent } from 'rxjs/observable/fromEvent';
-import { take, tap } 'rxjs/operators';
+import { take, tap } from 'rxjs/operators';
 
 const oneClickEvent = fromEvent(document, 'click').pipe(
     take(1),
