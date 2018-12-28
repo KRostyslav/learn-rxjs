@@ -10,19 +10,20 @@
 
 ---
 
-<div class="ua-ad"><a href="https://ultimateangular.com/?ref=76683_kee7y7vk"><img src="https://ultimateangular.com/assets/img/banners/ua-leader.svg"></a></div>
+<div class="ua-ad"><a href="https://ultimatecourses.com/?ref=76683_kee7y7vk"><img src="https://ultimatecourses.com/assets/img/banners/uc-leader.svg" style="width:100%;max-width:100%"></a></div>
 
 ### Examples
 
 ##### Example 1: Logging with do
 
 (
-[StackBlitz](https://stackblitz.com/edit/typescript-s1aymr?file=index.ts&devtoolsheight=100)
+[StackBlitz](https://stackblitz.com/edit/typescript-cd2gjp?file=index.ts&devtoolsheight=100)
 | [jsBin](http://jsbin.com/jimazuriva/1/edit?js,console) |
 [jsFiddle](https://jsfiddle.net/btroncone/qtyakorq/) )
 
 ```js
-import { of } from 'rxjs/observable/of';
+// RxJS v6+
+import { of } from 'rxjs';
 import { tap, map } from 'rxjs/operators';
 
 const source = of(1, 2, 3, 4, 5);
@@ -38,13 +39,18 @@ const example = source.pipe(
 const subscribe = example.subscribe(val => console.log(val));
 ```
 
+### Related Recipes
+
+- [Horizontal Scroll Indicator](../../recipes/horizontal-scroll-indicator.md)
+- [Type Ahead](../../recipes/type-ahead.md)
+
 ### Additional Resources
 
-* [do](http://reactivex.io/documentation/operators/do.html)
-  :newspaper: - Official docs
-* [Logging a stream with do](https://egghead.io/lessons/rxjs-logging-a-stream-with-do?course=step-by-step-async-javascript-with-rxjs)
+- [do](http://reactivex.io/documentation/operators/do.html) :newspaper: -
+  Official docs
+- [Logging a stream with do](https://egghead.io/lessons/rxjs-logging-a-stream-with-do?course=step-by-step-async-javascript-with-rxjs)
   :video_camera: :dollar: - John Linquist
-* [Utility operator: do](https://egghead.io/lessons/rxjs-utility-operator-do?course=rxjs-beyond-the-basics-operators-in-depth)
+- [Utility operator: do](https://egghead.io/lessons/rxjs-utility-operator-do?course=rxjs-beyond-the-basics-operators-in-depth)
   :video_camera: :dollar: - André Staltz
 
 ---

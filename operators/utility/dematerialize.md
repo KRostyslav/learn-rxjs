@@ -4,21 +4,21 @@
 
 ## Turn notification objects into notification values.
 
-<div class="ua-ad"><a href="https://ultimateangular.com/?ref=76683_kee7y7vk"><img src="https://ultimateangular.com/assets/img/banners/ua-leader.svg"></a></div>
+<div class="ua-ad"><a href="https://ultimatecourses.com/?ref=76683_kee7y7vk"><img src="https://ultimatecourses.com/assets/img/banners/uc-leader.svg" style="width:100%;max-width:100%"></a></div>
 
 ### Examples
 
 ##### Example 1: Converting notifications to values
 
 (
-[StackBlitz](https://stackblitz.com/edit/typescript-xhldsy?file=index.ts&devtoolsheight=100)
+[StackBlitz](https://stackblitz.com/edit/typescript-bxdwbg?file=index.ts&devtoolsheight=100)
 | [jsBin](http://jsbin.com/vafedocibi/1/edit?js,console) |
 [jsFiddle](https://jsfiddle.net/btroncone/jw08mouy/) )
 
 ```js
-import { from } from 'rxjs/observable/from';
+// RxJS v6+
+import { from, Notification } from 'rxjs';
 import { dematerialize } from 'rxjs/operators';
-import { Notification } from 'rxjs/Notification';
 
 //emit next and error notifications
 const source = from([
@@ -38,7 +38,7 @@ const subscription = source.subscribe({
 
 ### Additional Resources
 
-* [dematerialize](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-dematerialize)
+- [dematerialize](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-dematerialize)
   :newspaper: - Official docs
 
 ---

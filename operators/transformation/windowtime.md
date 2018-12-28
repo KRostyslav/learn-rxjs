@@ -4,18 +4,20 @@
 
 ## Observable of values collected from source for each provided time span.
 
-<div class="ua-ad"><a href="https://ultimateangular.com/?ref=76683_kee7y7vk"><img src="https://ultimateangular.com/assets/img/banners/ua-leader.svg"></a></div>
+<div class="ua-ad"><a href="https://ultimatecourses.com/?ref=76683_kee7y7vk"><img src="https://ultimatecourses.com/assets/img/banners/uc-leader.svg" style="width:100%;max-width:100%"></a></div>
 
 ### Examples
 
 ##### Example 1: Open new window every specified duration
 
-( [StackBlitz](https://stackblitz.com/edit/typescript-vkkkef?file=index.ts&devtoolsheight=50) |
-[jsBin](http://jsbin.com/mifayacoqo/1/edit?js,console) |
+(
+[StackBlitz](https://stackblitz.com/edit/typescript-hkrjsc?file=index.ts&devtoolsheight=100)
+| [jsBin](http://jsbin.com/mifayacoqo/1/edit?js,console) |
 [jsFiddle](https://jsfiddle.net/btroncone/g04b3qeb/) )
 
 ```js
-import { timer } from 'rxjs/observable/timer';
+// RxJS v6+
+import { timer } from 'rxjs';
 import { windowTime, tap, mergeAll } from 'rxjs/operators';
 
 //emit immediately then every 1s
@@ -47,7 +49,7 @@ const subscribeTwo = example
 
 ### Additional Resources
 
-* [windowTime](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-windowTime)
+- [windowTime](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-windowTime)
   :newspaper: - Official docs
 
 ---

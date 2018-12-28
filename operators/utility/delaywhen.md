@@ -4,20 +4,20 @@
 
 ## Delay emitted values determined by provided function.
 
-<div class="ua-ad"><a href="https://ultimateangular.com/?ref=76683_kee7y7vk"><img src="https://ultimateangular.com/assets/img/banners/ua-leader.svg"></a></div>
+<div class="ua-ad"><a href="https://ultimatecourses.com/?ref=76683_kee7y7vk"><img src="https://ultimatecourses.com/assets/img/banners/uc-leader.svg" style="width:100%;max-width:100%"></a></div>
 
 ### Examples
 
 ##### Example 1: Delay based on observable
 
 (
-[StackBlitz](https://stackblitz.com/edit/typescript-ydbk4j?file=index.ts&devtoolsheight=100)
+[StackBlitz](https://stackblitz.com/edit/typescript-5yzn8g?file=index.ts&devtoolsheight=100)
 | [jsBin](http://jsbin.com/topohekuje/edit?js,console) |
 [jsFiddle](https://jsfiddle.net/btroncone/b057mxkL/) )
 
 ```js
-import { interval } from 'rxjs/observable/interval';
-import { timer } from 'rxjs/observable/timer';
+// RxJS v6+
+import { interval, timer } from 'rxjs';
 import { delayWhen } from 'rxjs/operators';
 
 //emit value every second
@@ -33,9 +33,9 @@ const subscribe = delayWhenExample.subscribe(val => console.log(val));
 
 ### Additional Resources
 
-* [delayWhen](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-delayWhen)
+- [delayWhen](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-delayWhen)
   :newspaper: - Official docs
-* [Transformation operator: delay and delayWhen](https://egghead.io/lessons/rxjs-transformation-operators-delay-and-delaywhen?course=rxjs-beyond-the-basics-operators-in-depth)
+- [Transformation operator: delay and delayWhen](https://egghead.io/lessons/rxjs-transformation-operators-delay-and-delaywhen?course=rxjs-beyond-the-basics-operators-in-depth)
   :video_camera: :dollar: - André Staltz
 
 ---

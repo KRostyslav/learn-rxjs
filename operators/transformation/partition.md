@@ -4,18 +4,20 @@
 
 ## Split one observable into two based on provided predicate.
 
-<div class="ua-ad"><a href="https://ultimateangular.com/?ref=76683_kee7y7vk"><img src="https://ultimateangular.com/assets/img/banners/ua-leader.svg"></a></div>
+<div class="ua-ad"><a href="https://ultimatecourses.com/?ref=76683_kee7y7vk"><img src="https://ultimatecourses.com/assets/img/banners/uc-leader.svg" style="width:100%;max-width:100%"></a></div>
 
 ### Examples
 
 ##### Example 1: Split even and odd numbers
 
-( [StackBlitz](https://stackblitz.com/edit/typescript-kyndxr?file=index.ts&devtoolsheight=50) |
-[jsBin](http://jsbin.com/hipehexaku/1/edit?js,console) |
+(
+[StackBlitz](https://stackblitz.com/edit/typescript-gr3ljs?file=index.ts&devtoolsheight=100)
+| [jsBin](http://jsbin.com/hipehexaku/1/edit?js,console) |
 [jsFiddle](https://jsfiddle.net/btroncone/q0xo7gvv/) )
 
 ```js
-import { from } from 'rxjs/observable/from';
+// RxJS v6+
+import { from, merge } from 'rxjs';
 import { partition, map } from 'rxjs/operators';
 
 const source = from([1, 2, 3, 4, 5, 6]);
@@ -38,14 +40,14 @@ const subscribe = merge(
 
 ##### Example 2: Split success and errors
 
-( [StackBlitz](https://stackblitz.com/edit/typescript-hiqolh?file=index.ts&devtoolsheight=50) |
-[jsBin](http://jsbin.com/kukuguhuri/1/edit?js,console) |
+(
+[StackBlitz](https://stackblitz.com/edit/typescript-vmfvp8?file=index.ts&devtoolsheight=100)
+| [jsBin](http://jsbin.com/kukuguhuri/1/edit?js,console) |
 [jsFiddle](https://jsfiddle.net/btroncone/fe246u5p/) )
 
 ```js
-import { from } from 'rxjs/observable/from';
-import { of } from 'rxjs/observable/of';
-import { merge } from 'rxjs/observable/merge';
+// RxJS v6+
+import { merge, of, from } from 'rxjs';
 import { map, partition, catchError } from 'rxjs/operators';
 
 const source = from([1, 2, 3, 4, 5, 6]);
@@ -76,7 +78,7 @@ const subscribe = merge(
 
 ### Additional Resources
 
-* [partition](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-partition)
+- [partition](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-partition)
   :newspaper: - Official docs
 
 ---

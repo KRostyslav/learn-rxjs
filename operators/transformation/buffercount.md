@@ -4,18 +4,19 @@
 
 ## Collect emitted values until provided number is fulfilled, emit as array.
 
-<div class="ua-ad"><a href="https://ultimateangular.com/?ref=76683_kee7y7vk"><img src="https://ultimateangular.com/assets/img/banners/ua-leader.svg"></a></div>
+<div class="ua-ad"><a href="https://ultimatecourses.com/?ref=76683_kee7y7vk"><img src="https://ultimatecourses.com/assets/img/banners/uc-leader.svg" style="width:100%;max-width:100%"></a></div>
 
 ### Examples
 
 ##### Example 1: Collect buffer and emit after specified number of values
 
-( [StackBlitz](https://stackblitz.com/edit/typescript-8qxfpn?file=index.ts&devtoolsheight=50) |
+( [StackBlitz](https://stackblitz.com/edit/typescript-osryhu?file=index.ts&devtoolsheight=50) |
 [jsBin](http://jsbin.com/suveqaromu/1/edit?js,console) |
 [jsFiddle](https://jsfiddle.net/btroncone/ky9myc5b/) )
 
 ```js
-import { interval } from 'rxjs/observable/interval';
+// RxJS v6+
+import { interval } from 'rxjs';
 import { bufferCount } from 'rxjs/operators';
 
 //Create an observable that emits a value every second
@@ -31,12 +32,13 @@ const subscribe = bufferThree.subscribe(val =>
 
 ##### Example 2: Overlapping buffers
 
-( [StackBlitz](https://stackblitz.com/edit/typescript-1otlmo?file=index.ts&devtoolsheight=50) |
+( [StackBlitz](https://stackblitz.com/edit/typescript-vvccar?file=index.ts&devtoolsheight=100) |
 [jsBin](http://jsbin.com/kiloxiraya/1/edit?js,console) |
 [jsFiddle](https://jsfiddle.net/btroncone/3c67qcz1/) )
 
 ```js
-import { interval } from 'rxjs/observable/interval';
+// RxJS v6+
+import { interval } from 'rxjs';
 import { bufferCount } from 'rxjs/operators';
 
 //Create an observable that emits a value every second
@@ -63,6 +65,31 @@ const bufferEveryOne = source.pipe(bufferCount(3, 1));
 const subscribe = bufferEveryOne.subscribe(val =>
   console.log('Start Buffer Every 1:', val)
 );
+```
+
+##### Example 3: Last n keyboard presses tracking
+
+( [StackBlitz](https://stackblitz.com/edit/rxjs-buffecount-keypresses-tracking?file=index.ts&devtoolsheight=50) )
+
+```js
+// RxJS v6+
+import { fromEvent, of } from 'rxjs';
+import { bufferCount, map, mergeMap, tap } from 'rxjs/operators';
+
+const fakeKeyPressesPost = keypresses => of(201)
+  .pipe(
+    tap(_ =>  {
+      console.log(`received key presses are: ${keypresses}`);
+      document.getElementById('output').innerText = keypresses;
+    })
+  );
+
+fromEvent(document, 'keydown')
+  .pipe(
+    map((e: KeyboardEvent) => e.key),
+    bufferCount(5),
+    mergeMap(fakeKeyPressesPost)
+  ).subscribe();
 ```
 
 ### Additional Resources

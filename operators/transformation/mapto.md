@@ -4,19 +4,20 @@
 
 ## Map emissions to constant value.
 
-<div class="ua-ad"><a href="https://ultimateangular.com/?ref=76683_kee7y7vk"><img src="https://ultimateangular.com/assets/img/banners/ua-leader.svg"></a></div>
+<div class="ua-ad"><a href="https://ultimatecourses.com/?ref=76683_kee7y7vk"><img src="https://ultimatecourses.com/assets/img/banners/uc-leader.svg" style="width:100%;max-width:100%"></a></div>
 
 ### Examples
 
 ##### Example 1: Map every emission to string
 
 (
-[StackBlitz](https://stackblitz.com/edit/typescript-zdgcuu?file=index.ts&devtoolsheight=50)
+[StackBlitz](https://stackblitz.com/edit/typescript-fipd7a?file=index.ts&devtoolsheight=100)
 | [jsBin](http://jsbin.com/qujolenili/1/edit?js,console) |
 [jsFiddle](https://jsfiddle.net/btroncone/4ojq56ng/) )
 
 ```js
-import { interval } from 'rxjs/observable/interval';
+// RxJS v6+
+import { interval } from 'rxjs';
 import { mapTo } from 'rxjs/operators';
 
 //emit value every two seconds
@@ -30,12 +31,13 @@ const subscribe = example.subscribe(val => console.log(val));
 ##### Example 2: Mapping clicks to string
 
 (
-[StackBlitz](https://stackblitz.com/edit/typescript-qm5spu?file=index.ts&devtoolsheight=50)
+[StackBlitz](https://stackblitz.com/edit/typescript-btghci?file=index.ts&devtoolsheight=100)
 | [jsBin](http://jsbin.com/xaheciwara/1/edit?js,console,output) |
 [jsFiddle](https://jsfiddle.net/btroncone/52fqL4nn/) )
 
 ```js
-import { fromEvent } from 'rxjs/observable/fromEvent';
+// RxJS v6+
+import { fromEvent } from 'rxjs';
 import { mapTo } from 'rxjs/operators';
 
 //emit every click on document

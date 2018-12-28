@@ -4,19 +4,20 @@
 
 ## Retry an observable sequence a specific number of times should an error occur.
 
-<div class="ua-ad"><a href="https://ultimateangular.com/?ref=76683_kee7y7vk"><img src="https://ultimateangular.com/assets/img/banners/ua-leader.svg"></a></div>
+<div class="ua-ad"><a href="https://ultimatecourses.com/?ref=76683_kee7y7vk"><img src="https://ultimatecourses.com/assets/img/banners/uc-leader.svg" style="width:100%;max-width:100%"></a></div>
 
 ### Examples
 
 ##### Example 1: Retry 2 times on error
 
-( [jsBin](http://jsbin.com/yovacuxuqa/1/edit?js,console) |
+(
+[StackBlitz](https://stackblitz.com/edit/typescript-jpjcpg?file=index.ts&devtoolsheight=100)
+| [jsBin](http://jsbin.com/yovacuxuqa/1/edit?js,console) |
 [jsFiddle](https://jsfiddle.net/btroncone/hg7z16bo/) )
 
 ```js
-import { interval } from 'rxjs/observable/interval';
-import { of } from 'rxjs/observable/of';
-import { _throw } from 'rxjs/observable/throw';
+// RxJS v6+
+import { interval, of, throwError } from 'rxjs';
 import { mergeMap, retry } from 'rxjs/operators';
 
 //emit value every 1s
@@ -25,7 +26,7 @@ const example = source.pipe(
   mergeMap(val => {
     //throw error for demonstration
     if (val > 5) {
-      return _throw('Error!');
+      return throwError('Error!');
     }
     return of(val);
   }),
@@ -47,9 +48,9 @@ const subscribe = example.subscribe({
 
 ### Additional Resources
 
-* [retry](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-retry)
+- [retry](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-retry)
   :newspaper: - Official docs
-* [Error handling operator: retry and retryWhen](https://egghead.io/lessons/rxjs-error-handling-operator-retry-and-retrywhen?course=rxjs-beyond-the-basics-operators-in-depth)
+- [Error handling operator: retry and retryWhen](https://egghead.io/lessons/rxjs-error-handling-operator-retry-and-retrywhen?course=rxjs-beyond-the-basics-operators-in-depth)
   :video_camera: :dollar: - André Staltz
 
 ---

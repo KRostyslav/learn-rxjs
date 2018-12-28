@@ -4,20 +4,19 @@
 
 ## Map to inner observable, ignore other values until that observable completes.
 
-<div class="ua-ad"><a href="https://ultimateangular.com/?ref=76683_kee7y7vk"><img src="https://ultimateangular.com/assets/img/banners/ua-leader.svg"></a></div>
+<div class="ua-ad"><a href="https://ultimatecourses.com/?ref=76683_kee7y7vk"><img src="https://ultimatecourses.com/assets/img/banners/uc-leader.svg" style="width:100%;max-width:100%"></a></div>
 
 ### Examples
 
 ##### Example 1: exhaustMap with interval
 
-( [Stackblitz](https://stackblitz.com/edit/typescript-duwrhu?file=index.ts&devtoolsheight=50) |
+( [Stackblitz](https://stackblitz.com/edit/typescript-3qydhn?file=index.ts&devtoolsheight=100) |
 [jsBin](http://jsbin.com/woposeqobo/1/edit?js,console) |
 [jsFiddle](https://jsfiddle.net/btroncone/9ovzapp9/) )
 
 ```js
-import { interval } from 'rxjs/observable/interval';
-import { merge } from 'rxjs/observable/merge';
-import { of } from 'rxjs/observable/of';
+// RxJS v6+
+import { interval, merge, of } from 'rxjs';
 import { delay, take, exhaustMap } from 'rxjs/operators';
 
 const sourceInterval = interval(1000);
@@ -47,12 +46,13 @@ const exhaustSub = merge(
 
 ##### Example 2: Another exhaustMap with interval
 
-( [Stackblitz](https://stackblitz.com/edit/typescript-crlz2s?file=index.ts&devtoolsheight=50) |
+( [Stackblitz](https://stackblitz.com/edit/typescript-vxussb?file=index.ts&devtoolsheight=100) |
 [jsBin](http://jsbin.com/fizuduzuti/1/edit?js,console) |
 [jsFiddle](https://jsfiddle.net/btroncone/5ck8yg5k/3/) )
 
 ```js
-import { interval } from 'rxjs/observable/interval';
+// RxJS v6+
+import { interval } from 'rxjs';
 import { exhaustMap, tap, take } from 'rxjs/operators';
 
 const firstInterval = interval(1000).pipe(take(10));

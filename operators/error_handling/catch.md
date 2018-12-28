@@ -1,4 +1,4 @@
-# catchError
+# catch / catchError
 
 #### signature: `catchError(project : function): Observable`
 
@@ -10,7 +10,7 @@
 
 ---
 
-<div class="ua-ad"><a href="https://ultimateangular.com/?ref=76683_kee7y7vk"><img src="https://ultimateangular.com/assets/img/banners/ua-leader.svg"></a></div>
+<div class="ua-ad"><a href="https://ultimatecourses.com/?ref=76683_kee7y7vk"><img src="https://ultimatecourses.com/assets/img/banners/uc-leader.svg" style="width:100%;max-width:100%"></a></div>
 
 ### Examples
 
@@ -20,15 +20,17 @@
 
 ##### Example 1: Catching error from observable
 
-( [jsBin](http://jsbin.com/porevoxelu/1/edit?js,console) |
+(
+[StackBlitz](https://stackblitz.com/edit/typescript-auc2u2?file=index.ts&devtoolsheight=100)
+| [jsBin](http://jsbin.com/porevoxelu/1/edit?js,console) |
 [jsFiddle](https://jsfiddle.net/btroncone/wk4oLLqc/) )
 
 ```js
-import { _throw } from 'rxjs/observable/throw';
-import { of } from 'rxjs/observable/of';
+// RxJS v6+
+import { throwError, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 //emit error
-const source = _throw('This is an error!');
+const source = throwError('This is an error!');
 //gracefully handle error, returning observable with error message
 const example = source.pipe(catchError(val => of(`I caught: ${val}`)));
 //output: 'I caught: This is an error'
@@ -37,13 +39,14 @@ const subscribe = example.subscribe(val => console.log(val));
 
 ##### Example 2: Catching rejected promise
 
-( [jsBin](http://jsbin.com/rusaxubanu/1/edit?js,console) |
+(
+[StackBlitz](https://stackblitz.com/edit/typescript-nte3xs?file=index.ts&devtoolsheight=100)
+| [jsBin](http://jsbin.com/rusaxubanu/1/edit?js,console) |
 [jsFiddle](https://jsfiddle.net/btroncone/sLq92gLv/) )
 
 ```js
-import { timer } from 'rxjs/observable/timer';
-import { fromPromise } from 'rxjs/observable/fromPromise';
-import { of } from 'rxjs/observable/of';
+// RxJS v6+
+import { timer, from, of } from 'rxjs';
 import { mergeMap, catchError } from 'rxjs/operators';
 
 //create promise that immediately rejects
@@ -54,9 +57,7 @@ const source = timer(1000);
 //catch rejected promise, returning observable containing error message
 const example = source.pipe(
   mergeMap(_ =>
-    fromPromise(myBadPromise()).pipe(
-      catchError(error => of(`Bad Promise: ${error}`))
-    )
+    from(myBadPromise()).pipe(catchError(error => of(`Bad Promise: ${error}`)))
   )
 );
 //output: 'Bad Promise: Rejected'
@@ -65,7 +66,7 @@ const subscribe = example.subscribe(val => console.log(val));
 
 ### Additional Resources
 
-* [Error handling operator: catch](https://egghead.io/lessons/rxjs-error-handling-operator-catch?course=rxjs-beyond-the-basics-operators-in-depth)
+- [Error handling operator: catch](https://egghead.io/lessons/rxjs-error-handling-operator-catch?course=rxjs-beyond-the-basics-operators-in-depth)
   :video_camera: :dollar: - André Staltz
 
 ---

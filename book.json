@@ -24,9 +24,22 @@
       "token": "UA-54001708-2"
     },
     "github-buttons": {
-      "repo": "btroncone/learn-rxjs",
-      "types": ["star", "watch"],
-      "size": "large"
+      "buttons": [
+        {
+          "user": "btroncone",
+          "repo": "learn-rxjs",
+          "type": "star",
+          "size": "small",
+          "count": true
+        },
+        {
+          "user": "btroncone",
+          "repo": "learn-rxjs",
+          "type": "watch",
+          "size": "small",
+          "count": true
+        }
+      ]
     }
   }
 }

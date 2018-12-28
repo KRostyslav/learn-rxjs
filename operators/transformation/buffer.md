@@ -4,19 +4,19 @@
 
 ## Collect output values until provided observable emits, emit as array.
 
-<div class="ua-ad"><a href="https://ultimateangular.com/?ref=76683_kee7y7vk"><img src="https://ultimateangular.com/assets/img/banners/ua-leader.svg"></a></div>
+<div class="ua-ad"><a href="https://ultimatecourses.com/?ref=76683_kee7y7vk"><img src="https://ultimatecourses.com/assets/img/banners/uc-leader.svg" style="width:100%;max-width:100%"></a></div>
 
 ### Examples
 
 ##### Example 1: Buffer until document click
 
-( [StackBlitz](https://stackblitz.com/edit/typescript-p1fckr?file=index.ts&devtoolsheight=50) |
+( [StackBlitz](https://stackblitz.com/edit/typescript-nwp2cl?file=index.ts&devtoolsheight=50) |
 [jsBin](http://jsbin.com/fazimarajo/edit?js,console,output) |
 [jsFiddle](https://jsfiddle.net/btroncone/7451s67k/) )
 
 ```js
-import { interval } from 'rxjs/observable/interval';
-import { fromEvent } from 'rxjs/observable/fromEvent';
+// RxJS v6+
+import { interval, fromEvent } from 'rxjs';
 import { buffer } from 'rxjs/operators';
 
 //Create an observable that emits a value every second

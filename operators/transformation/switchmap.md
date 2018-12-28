@@ -23,7 +23,7 @@ cancelling effect. On each emission the previous inner observable (the result of
 the function you supplied) is cancelled and the new observable is subscribed.
 You can remember this by the phrase **switch to a new observable**.
 
-This works perfect for scenarios like
+This works perfectly for scenarios like
 [typeaheads](https://angular-2-training-book.rangle.io/handout/http/search_with_switchmap.html)
 where you are no longer concerned with the response of the previous request when
 a new input arrives. This also is a safe option in situations where a long lived
@@ -38,19 +38,20 @@ every request needs to complete, think writes to a database. `switchMap` could
 cancel a request if the source emits quickly enough. In these scenarios
 [mergeMap](mergemap.md) is the correct option.
 
-<div class="ua-ad"><a href="https://ultimateangular.com/?ref=76683_kee7y7vk"><img src="https://ultimateangular.com/assets/img/banners/ua-leader.svg"></a></div>
+<div class="ua-ad"><a href="https://ultimatecourses.com/?ref=76683_kee7y7vk"><img src="https://ultimatecourses.com/assets/img/banners/uc-leader.svg" style="width:100%;max-width:100%"></a></div>
 
 ### Examples
 
 ##### Example 1: Restart interval every 5 seconds
 
-( [StackBlitz](https://stackblitz.com/edit/typescript-hbuxqv?file=index.ts&devtoolsheight=50) |
-[jsBin](http://jsbin.com/birepuveya/1/edit?js,console) |
+(
+[StackBlitz](https://stackblitz.com/edit/typescript-eb62ap?file=index.ts&devtoolsheight=100)
+| [jsBin](http://jsbin.com/birepuveya/1/edit?js,console) |
 [jsFiddle](https://jsfiddle.net/btroncone/6pz981gd/) )
 
 ```js
-import { timer } from 'rxjs/observable/timer';
-import { interval } from 'rxjs/observable/interval';
+// RxJS v6+
+import { timer, interval } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
 //emit immediately, then every 5s
@@ -63,13 +64,14 @@ const subscribe = example.subscribe(val => console.log(val));
 
 ##### Example 2: Reset on every click
 
-( [StackBlitz](https://stackblitz.com/edit/typescript-kki7qa?file=index.ts&devtoolsheight=50) |
-[jsBin](http://jsbin.com/zoruboxogo/1/edit?js,console) |
+(
+[StackBlitz](https://stackblitz.com/edit/typescript-s4pvix?file=index.ts&devtoolsheight=100)
+| [jsBin](http://jsbin.com/zoruboxogo/1/edit?js,console) |
 [jsFiddle](https://jsfiddle.net/btroncone/y11v8aqz/) )
 
 ```js
-import { fromEvent } from 'rxjs/observable/fromEvent';
-import { interval } from 'rxjs/observable/interval';
+// RxJS v6+
+import { interval, fromEvent } from 'rxjs';
 import { switchMap, mapTo } from 'rxjs/operators';
 
 //emit every click
@@ -84,13 +86,14 @@ const subscribe = example.subscribe(val => console.log(val));
 
 ##### Example 3: Using a `resultSelector` function
 
-( [StackBlitz](https://stackblitz.com/edit/typescript-gwav6n?file=index.ts&devtoolsheight=50) |
-[jsBin](http://jsbin.com/qobapubeze/1/edit?js,console) |
+(
+[StackBlitz](https://stackblitz.com/edit/typescript-bmibzi?file=index.ts&devtoolsheight=100)
+| [jsBin](http://jsbin.com/qobapubeze/1/edit?js,console) |
 [jsFiddle](https://jsfiddle.net/btroncone/nqfu534y/) )
 
 ```js
-import { timer } from 'rxjs/observable/timer';
-import { interval } from 'rxjs/observable/interval';
+// RxJS v6+
+import { timer, interval } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
 //emit immediately, then every 5s
@@ -119,13 +122,11 @@ const subscribe = example.subscribe(val => console.log(val));
 
 ##### Example 4: Countdown timer with switchMap
 
-( [StackBlitz](https://stackblitz.com/edit/typescript-ur5svp?file=index.ts&devtoolsheight=50) )
+( [StackBlitz](https://stackblitz.com/edit/typescript-ivdebg?file=index.ts) )
 
 ```js
-import { interval } from 'rxjs/observable/interval';
-import { fromEvent } from 'rxjs/observable/fromEvent';
-import { merge } from 'rxjs/observable/merge';
-import { empty } from 'rxjs/observable/empty';
+// RxJS v6+
+import { interval, fromEvent, merge, empty } from 'rxjs';
 import { switchMap, scan, takeWhile, startWith, mapTo } from 'rxjs/operators';
 
 const countdownSeconds = 10;
@@ -163,20 +164,22 @@ Resume Timer
 
 ### Related Recipes
 
-* [Smart Counter](../../recipes/smartcounter.md)
-* [Progress Bar](../../recipes/progressbar.md)
-* [HTTP Polling](../../recipes/http-polling.md)
+- [Smart Counter](../../recipes/smartcounter.md)
+- [Progress Bar](../../recipes/progressbar.md)
+- [HTTP Polling](../../recipes/http-polling.md)
+- [Type Ahead](../../recipes/type-ahead.md)
 
 ### Additional Resources
 
-* [switchMap](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-switchMap)
+- [switchMap](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-switchMap)
   :newspaper: - Official docs
-* [Avoiding switchMap-Related Bugs](https://blog.angularindepth.com/switchmap-bugs-b6de69155524) - Nicholas Jamieson
-* [Starting a stream with switchMap](https://egghead.io/lessons/rxjs-starting-a-stream-with-switchmap?course=step-by-step-async-javascript-with-rxjs)
+- [Avoiding switchMap-Related Bugs](https://blog.angularindepth.com/switchmap-bugs-b6de69155524) -
+  Nicholas Jamieson
+- [Starting a stream with switchMap](https://egghead.io/lessons/rxjs-starting-a-stream-with-switchmap?course=step-by-step-async-javascript-with-rxjs)
   :video_camera: :dollar: - John Linquist
-* [Use RxJS switchMap to map and flatten higher order observables](https://egghead.io/lessons/rxjs-use-rxjs-switchmap-to-map-and-flatten-higher-order-observables?course=use-higher-order-observables-in-rxjs-effectively)
+- [Use RxJS switchMap to map and flatten higher order observables](https://egghead.io/lessons/rxjs-use-rxjs-switchmap-to-map-and-flatten-higher-order-observables?course=use-higher-order-observables-in-rxjs-effectively)
   :video_camera: :dollar: - André Staltz
-* [Use switchMap as a safe default to flatten observables in RxJS](https://egghead.io/lessons/rxjs-use-switchmap-as-a-safe-default-to-flatten-observables-in-rxjs?course=use-higher-order-observables-in-rxjs-effectively)
+- [Use switchMap as a safe default to flatten observables in RxJS](https://egghead.io/lessons/rxjs-use-switchmap-as-a-safe-default-to-flatten-observables-in-rxjs?course=use-higher-order-observables-in-rxjs-effectively)
   :video_camera: :dollar: - André Staltz
 
 ---

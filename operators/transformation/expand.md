@@ -4,19 +4,19 @@
 
 ## Recursively call provided function.
 
-<div class="ua-ad"><a href="https://ultimateangular.com/?ref=76683_kee7y7vk"><img src="https://ultimateangular.com/assets/img/banners/ua-leader.svg"></a></div>
+<div class="ua-ad"><a href="https://ultimatecourses.com/?ref=76683_kee7y7vk"><img src="https://ultimatecourses.com/assets/img/banners/uc-leader.svg" style="width:100%;max-width:100%"></a></div>
 
 ### Examples
 
 ##### Example 1: Add one for each invocation
 
-( [StackBlitz](https://stackblitz.com/edit/typescript-okxzcb?file=index.ts&devtoolsheight=50) |
+( [StackBlitz](https://stackblitz.com/edit/typescript-ntgecj?file=index.ts&devtoolsheight=100) |
 [jsBin](http://jsbin.com/fuxocepazi/1/edit?js,console) |
 [jsFiddle](https://jsfiddle.net/btroncone/nu4apbLt/) )
 
 ```js
-import { interval } from 'rxjs/observable/interval';
-import { of } from 'rxjs/observable/of';
+// RxJS v6+
+import { interval, of } from 'rxjs';
 import { expand, take } from 'rxjs/operators';
 
 //emit 2

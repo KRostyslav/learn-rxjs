@@ -10,19 +10,20 @@
 
 ---
 
-<div class="ua-ad"><a href="https://ultimateangular.com/?ref=76683_kee7y7vk"><img src="https://ultimateangular.com/assets/img/banners/ua-leader.svg"></a></div>
+<div class="ua-ad"><a href="https://ultimatecourses.com/?ref=76683_kee7y7vk"><img src="https://ultimatecourses.com/assets/img/banners/uc-leader.svg" style="width:100%;max-width:100%"></a></div>
 
 ### Examples
 
 ##### Example 1: Multiple subscribers sharing source
 
 (
-[StackBlitz](https://stackblitz.com/edit/typescript-ufnzzz?file=index.ts&devtoolsheight=100)
+[StackBlitz](https://stackblitz.com/edit/typescript-dlaa1p?file=index.ts&devtoolsheight=100)
 | [jsBin](http://jsbin.com/jobiyomari/1/edit?js,console) |
 [jsFiddle](https://jsfiddle.net/btroncone/Lmesxxaq/) )
 
 ```js
-import { timer } from 'rxjs/observable/timer';
+// RxJS v6+
+import { timer } from 'rxjs';
 import { tap, mapTo, share } from 'rxjs/operators';
 
 //emit value in 1s
@@ -59,14 +60,14 @@ const subscribeFour = sharedExample.subscribe(val => console.log(val));
 
 ### Related Recipes
 
-* [Progress Bar](../../recipes/progressbar.md)
-* [Game Loop](../../recipes/gameloop.md)
+- [Progress Bar](../../recipes/progressbar.md)
+- [Game Loop](../../recipes/gameloop.md)
 
 ### Additional Resources
 
-* [share](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-share)
+- [share](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-share)
   :newspaper: - Official docs
-* [Sharing streams with share](https://egghead.io/lessons/rxjs-sharing-streams-with-share?course=step-by-step-async-javascript-with-rxjs)
+- [Sharing streams with share](https://egghead.io/lessons/rxjs-sharing-streams-with-share?course=step-by-step-async-javascript-with-rxjs)
   :video_camera: :dollar: - John Linquist
 
 ---

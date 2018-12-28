@@ -4,29 +4,34 @@
 
 ## Emit the previous and current values as an array.
 
-<div class="ua-ad"><a href="https://ultimateangular.com/?ref=76683_kee7y7vk"><img src="https://ultimateangular.com/assets/img/banners/ua-leader.svg"></a></div>
+<div class="ua-ad"><a href="https://ultimatecourses.com/?ref=76683_kee7y7vk"><img src="https://ultimatecourses.com/assets/img/banners/uc-leader.svg" style="width:100%;max-width:100%"></a></div>
 
 ### Examples
 
 ##### Example 1:
 
-( [StackBlitz](https://stackblitz.com/edit/typescript-hpjuv6?file=index.ts&devtoolsheight=50) |
-[jsBin](http://jsbin.com/keteyahido/1/edit?js,console) |
+(
+[StackBlitz](https://stackblitz.com/edit/typescript-tkuydr?file=index.ts&devtoolsheight=50)
+| [jsBin](http://jsbin.com/keteyahido/1/edit?js,console) |
 [jsFiddle](https://jsfiddle.net/btroncone/8va47bq3/) )
 
 ```js
+// RxJS v6+
 import { pairwise, take } from 'rxjs/operators';
-import { interval } from 'rxjs/observable/interval';
+import { interval } from 'rxjs';
 
 //Returns: [0,1], [1,2], [2,3], [3,4], [4,5]
 interval(1000)
-  .pipe(pairwise(), take(5))
+  .pipe(
+    pairwise(),
+    take(5)
+  )
   .subscribe(console.log);
 ```
 
 ### Additional Resources
 
-* [pairwise](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-pairwise)
+- [pairwise](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-pairwise)
   :newspaper: - Official docs
 
 ---

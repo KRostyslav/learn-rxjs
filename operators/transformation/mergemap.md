@@ -39,19 +39,20 @@ can also limit the number of active inner subscriptions at a time with the
 `concurrent` parameter, seen in
 [example 4](#example-4-mergemap-with-concurrent-value).
 
-<div class="ua-ad"><a href="https://ultimateangular.com/?ref=76683_kee7y7vk"><img src="https://ultimateangular.com/assets/img/banners/ua-leader.svg"></a></div>
+<div class="ua-ad"><a href="https://ultimatecourses.com/?ref=76683_kee7y7vk"><img src="https://ultimatecourses.com/assets/img/banners/uc-leader.svg" style="width:100%;max-width:100%"></a></div>
 
 ### Examples
 
 ##### Example 1: mergeMap with observable
 
 (
-[StackBlitz](https://stackblitz.com/edit/typescript-4mlj3e?file=index.ts&devtoolsheight=50)
+[StackBlitz](https://stackblitz.com/edit/typescript-f8ghcx?file=index.ts&devtoolsheight=100)
 | [jsBin](http://jsbin.com/mojurubana/1/edit?js,console) |
 [jsFiddle](https://jsfiddle.net/btroncone/41awjgda/) )
 
 ```js
-import { of } from 'rxjs/observable/of';
+// RxJS v6+
+import { of } from 'rxjs';
 import { mergeMap } from 'rxjs/operators';
 
 //emit 'Hello'
@@ -65,12 +66,13 @@ const subscribe = example.subscribe(val => console.log(val));
 ##### Example 2: mergeMap with promise
 
 (
-[StackBlitz](https://stackblitz.com/edit/typescript-cxgrtg?file=index.ts&devtoolsheight=50)
+[StackBlitz](https://stackblitz.com/edit/typescript-pnnsrq?file=index.ts&devtoolsheight=100)
 | [jsBin](http://jsbin.com/vuhecorana/1/edit?js,console) |
 [jsFiddle](https://jsfiddle.net/btroncone/o9kxpvsv/) )
 
 ```js
-import { of } from 'rxjs/observable/of';
+// RxJS v6+
+import { of } from 'rxjs';
 import { mergeMap } from 'rxjs/operators';
 
 //emit 'Hello'
@@ -87,12 +89,13 @@ const subscribe = example.subscribe(val => console.log(val));
 ##### Example 3: mergeMap with `resultSelector`
 
 (
-[StackBlitz](https://stackblitz.com/edit/typescript-rlfc72?file=index.ts&devtoolsheight=50)
+[StackBlitz](https://stackblitz.com/edit/typescript-9p6ws7?file=index.ts&devtoolsheight=100)
 | [jsBin](http://jsbin.com/wajokocage/1/edit?js,console) |
 [jsFiddle](https://jsfiddle.net/btroncone/zu9a6vr4/) )
 
 ```js
-import { of } from 'rxjs/observable/of';
+// RxJS v6+
+import { of } from 'rxjs';
 import { mergeMap } from 'rxjs/operators';
 
 /*
@@ -119,12 +122,13 @@ const subscribe = example.subscribe(val => console.log(val));
 ##### Example 4: mergeMap with concurrent value
 
 (
-[StackBlitz](https://stackblitz.com/edit/typescript-arsrsh?file=index.ts&devtoolsheight=50)
+[StackBlitz](https://stackblitz.com/edit/typescript-r3gcr4?file=index.ts&devtoolsheight=100)
 | [jsBin](http://jsbin.com/qaqucuwise/1/edit?js,console) |
 [jsFiddle](https://jsfiddle.net/btroncone/2rmLxpyz/) )
 
 ```js
-import { interval } from 'rxjs/observable/interval';
+// RxJS v6+
+import { interval } from 'rxjs';
 import { mergeMap, take } from 'rxjs/operators';
 
 //emit value every 1s
@@ -154,19 +158,19 @@ const subscribe = example.subscribe(val => console.log(val));
 
 ### Related Recipes
 
-* [HTTP Polling](../../recipes/http-polling.md)
+- [HTTP Polling](../../recipes/http-polling.md)
 
 ### Additional Resources
 
-* [mergeMap](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-mergeMap)
+- [mergeMap](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-mergeMap)
   :newspaper: - Official docs
-* [map vs flatMap](https://egghead.io/lessons/rxjs-rxjs-map-vs-flatmap)
+- [map vs flatMap](https://egghead.io/lessons/rxjs-rxjs-map-vs-flatmap)
   :video_camera: :dollar: - Ben Lesh
-* [Async requests and responses in RxJS](https://egghead.io/lessons/rxjs-04-reactive-programming-async-requests-and-responses-in-rxjs)
+- [Async requests and responses in RxJS](https://egghead.io/lessons/rxjs-04-reactive-programming-async-requests-and-responses-in-rxjs)
   :video_camera: :dollar: - André Staltz
-* [Use RxJS mergeMap to map and merge higher order observables](https://egghead.io/lessons/rxjs-use-rxjs-mergemap-to-map-and-merge-high-order-observables?course=use-higher-order-observables-in-rxjs-effectively)
+- [Use RxJS mergeMap to map and merge higher order observables](https://egghead.io/lessons/rxjs-use-rxjs-mergemap-to-map-and-merge-high-order-observables?course=use-higher-order-observables-in-rxjs-effectively)
   :video_camera: :dollar: - André Staltz
-* [Use RxJS mergeMap for fine grain custom behavior](https://egghead.io/lessons/rxjs-use-rxjs-mergemap-for-fine-grain-custom-behavior?course=use-higher-order-observables-in-rxjs-effectively)
+- [Use RxJS mergeMap for fine grain custom behavior](https://egghead.io/lessons/rxjs-use-rxjs-mergemap-for-fine-grain-custom-behavior?course=use-higher-order-observables-in-rxjs-effectively)
   :video_camera: :dollar: - André Staltz
 
 ---

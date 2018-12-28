@@ -10,18 +10,20 @@
 :bulb: If you need the current accumulated value on each emission, try
 [scan](scan.md)!
 
-<div class="ua-ad"><a href="https://ultimateangular.com/?ref=76683_kee7y7vk"><img src="https://ultimateangular.com/assets/img/banners/ua-leader.svg"></a></div>
+<div class="ua-ad"><a href="https://ultimatecourses.com/?ref=76683_kee7y7vk"><img src="https://ultimatecourses.com/assets/img/banners/uc-leader.svg" style="width:100%;max-width:100%"></a></div>
 
 ### Examples
 
 ##### Example 1: Sum a stream of numbers
 
-( [StackBlitz](https://stackblitz.com/edit/typescript-bbmye7?file=index.ts&devtoolsheight=50) |
-[jsBin](http://jsbin.com/dakuneneho/edit?js,console) |
+(
+[StackBlitz](https://stackblitz.com/edit/typescript-hdsv5e?file=index.ts&devtoolsheight=100)
+| [jsBin](http://jsbin.com/dakuneneho/edit?js,console) |
 [jsFiddle](https://jsfiddle.net/f8fw7yka/) )
 
 ```js
-import { of } from 'rxjs/observable/of';
+// RxJS v6+
+import { of } from 'rxjs';
 import { reduce } from 'rxjs/operators';
 
 const source = of(1, 2, 3, 4);
@@ -32,9 +34,9 @@ const subscribe = example.subscribe(val => console.log('Sum:', val));
 
 ### Additional Resources
 
-* [reduce](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-reduce)
+- [reduce](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-reduce)
   :newspaper: - Official docs
-* [Scan() vs reduce() | RxJS TUTORIAL](https://www.youtube.com/watch?v=myEeo2rZc3g)
+- [Scan() vs reduce() | RxJS TUTORIAL](https://www.youtube.com/watch?v=myEeo2rZc3g)
   :video_camera: - Academind
 
 ---

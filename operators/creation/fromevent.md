@@ -4,17 +4,20 @@
 
 ## Turn event into observable sequence.
 
-<div class="ua-ad"><a href="https://ultimateangular.com/?ref=76683_kee7y7vk"><img src="https://ultimateangular.com/assets/img/banners/ua-leader.svg"></a></div>
+<div class="ua-ad"><a href="https://ultimatecourses.com/?ref=76683_kee7y7vk"><img src="https://ultimatecourses.com/assets/img/banners/uc-leader.svg" style="width:100%;max-width:100%"></a></div>
 
 ### Examples
 
 ##### Example 1: Observable from mouse clicks
 
-( [jsBin](http://jsbin.com/xikapewoqa/1/edit?js,console,output) |
+(
+[StackBlitz](https://stackblitz.com/edit/typescript-mfyefr?file=index.ts&devtoolsheight=50)
+| [jsBin](http://jsbin.com/xikapewoqa/1/edit?js,console,output) |
 [jsFiddle](https://jsfiddle.net/btroncone/vbLz1pdx/) )
 
 ```js
-import { fromEvent } from 'rxjs/observable/fromEvent';
+// RxJS v6+
+import { fromEvent } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 //create observable that emits click events
@@ -27,14 +30,16 @@ const subscribe = example.subscribe(val => console.log(val));
 
 ### Related Recipes
 
-* [Smart Counter](../../recipes/smartcounter.md)
-* [Progress Bar](../../recipes/progressbar.md)
-* [Game Loop](../../recipes/gameloop.md)
-* [HTTP Polling](../../recipes/http-polling.md)
+- [Smart Counter](../../recipes/smartcounter.md)
+- [Progress Bar](../../recipes/progressbar.md)
+- [Game Loop](../../recipes/gameloop.md)
+- [HTTP Polling](../../recipes/http-polling.md)
+- [Horizontal Scroll Indicator](../../recipes/horizontal-scroll-indicator.md)
+- [Type Ahead](../../recipes/type-ahead.md)
 
 ### Additional Resources
 
-* [fromEvent](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#static-method-fromEvent)
+- [fromEvent](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#static-method-fromEvent)
   :newspaper: - Official docs
 
 ---

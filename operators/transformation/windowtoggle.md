@@ -4,19 +4,20 @@
 
 ## Collect and emit observable of values from source between opening and closing emission.
 
-<div class="ua-ad"><a href="https://ultimateangular.com/?ref=76683_kee7y7vk"><img src="https://ultimateangular.com/assets/img/banners/ua-leader.svg"></a></div>
+<div class="ua-ad"><a href="https://ultimatecourses.com/?ref=76683_kee7y7vk"><img src="https://ultimatecourses.com/assets/img/banners/uc-leader.svg" style="width:100%;max-width:100%"></a></div>
 
 ### Examples
 
 ##### Example 1: Toggle window at increasing interval
 
-( [StackBlitz](https://stackblitz.com/edit/typescript-t14gn2?file=index.ts&devtoolsheight=50) |
-[jsBin](http://jsbin.com/xasofupuka/1/edit?js,console) |
+(
+[StackBlitz](https://stackblitz.com/edit/typescript-3nsyte?file=index.ts&devtoolsheight=100)
+| [jsBin](http://jsbin.com/xasofupuka/1/edit?js,console) |
 [jsFiddle](https://jsfiddle.net/btroncone/3xmmuzy4/) )
 
 ```js
-import { interval } from 'rxjs/observable/interval';
-import { timer } from 'rxjs/observable/timer';
+// RxJS v6+
+import { timer, interval } from 'rxjs';
 import { tap, windowToggle, mergeAll } from 'rxjs/operators';
 
 //emit immediately then every 1s
@@ -54,9 +55,9 @@ const subscribeTwo = example
 
 ### Additional Resources
 
-* [windowToggle](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-windowToggle)
+- [windowToggle](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-windowToggle)
   :newspaper: - Official docs
-* [Split an RxJS observable conditionally with windowToggle](https://egghead.io/lessons/rxjs-split-an-rxjs-observable-conditionally-with-windowtoggle?course=use-higher-order-observables-in-rxjs-effectively)
+- [Split an RxJS observable conditionally with windowToggle](https://egghead.io/lessons/rxjs-split-an-rxjs-observable-conditionally-with-windowtoggle?course=use-higher-order-observables-in-rxjs-effectively)
   :video_camera: :dollar: - André Staltz
 
 ---

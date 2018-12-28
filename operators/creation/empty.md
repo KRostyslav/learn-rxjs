@@ -4,19 +4,20 @@
 
 ## Observable that immediately completes.
 
-<div class="ua-ad"><a href="https://ultimateangular.com/?ref=76683_kee7y7vk"><img src="https://ultimateangular.com/assets/img/banners/ua-leader.svg"></a></div>
+<div class="ua-ad"><a href="https://ultimatecourses.com/?ref=76683_kee7y7vk"><img src="https://ultimatecourses.com/assets/img/banners/uc-leader.svg" style="width:100%;max-width:100%"></a></div>
 
 ### Examples
 
 ##### Example 1: empty immediately completes
 
 (
-[StackBlitz](https://stackblitz.com/edit/typescript-ospewh?file=index.ts&devtoolsheight=100)
+[StackBlitz](https://stackblitz.com/edit/typescript-aqfpkq?file=index.ts&devtoolsheight=100)
 | [jsBin](http://jsbin.com/rodubucaqa/1/edit?js,console) |
 [jsFiddle](https://jsfiddle.net/btroncone/bz71mzuy/) )
 
 ```js
-import { empty } from 'rxjs/observable/empty';
+// RxJS v6+
+import { empty } from 'rxjs';
 
 //output: 'Complete!'
 const subscribe = empty().subscribe({
@@ -28,14 +29,12 @@ const subscribe = empty().subscribe({
 ##### Example 2: `empty` with timer
 
 (
-[StackBlitz](https://stackblitz.com/edit/typescript-ur5svp?file=index.ts&devtoolsheight=50)
+[StackBlitz](https://stackblitz.com/edit/typescript-uujo8t?file=index.ts&devtoolsheight=50)
 )
 
 ```js
-import { interval } from 'rxjs/observable/interval';
-import { fromEvent } from 'rxjs/observable/fromEvent';
-import { merge } from 'rxjs/observable/merge';
-import { empty } from 'rxjs/observable/empty';
+// RxJS v6+
+import { interval, fromEvent, merge, empty } from 'rxjs';
 import { switchMap, scan, takeWhile, startWith, mapTo } from 'rxjs/operators';
 
 const countdownSeconds = 10;
@@ -60,9 +59,9 @@ const timer$ = merge(pause$, resume$)
 
 ### Additional Resources
 
-* [empty](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#static-method-empty)
+- [empty](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#static-method-empty)
   :newspaper: - Official docs
-* [Creation operators: empty, never, and throw](https://egghead.io/lessons/rxjs-creation-operators-empty-never-throw?course=rxjs-beyond-the-basics-creating-observables-from-scratch)
+- [Creation operators: empty, never, and throw](https://egghead.io/lessons/rxjs-creation-operators-empty-never-throw?course=rxjs-beyond-the-basics-creating-observables-from-scratch)
   :video_camera: :dollar: - André Staltz
 
 ---

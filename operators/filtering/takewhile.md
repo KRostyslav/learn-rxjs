@@ -4,17 +4,20 @@
 
 ## Emit values until provided expression is false.
 
-<div class="ua-ad"><a href="https://ultimateangular.com/?ref=76683_kee7y7vk"><img src="https://ultimateangular.com/assets/img/banners/ua-leader.svg"></a></div>
+<div class="ua-ad"><a href="https://ultimatecourses.com/?ref=76683_kee7y7vk"><img src="https://ultimatecourses.com/assets/img/banners/uc-leader.svg" style="width:100%;max-width:100%"></a></div>
 
 ### Examples
 
 ##### Example 1: Take values under limit
 
-( [jsBin](http://jsbin.com/zanefaqexu/1/edit?js,console) |
+(
+[StackBlitz](https://stackblitz.com/edit/typescript-af3hdf?file=index.ts&devtoolsheight=100)
+| [jsBin](http://jsbin.com/zanefaqexu/1/edit?js,console) |
 [jsFiddle](https://jsfiddle.net/btroncone/yakd4jgc/) )
 
 ```js
-import { of } from 'rxjs/observable/of';
+// RxJS v6+
+import { of } from 'rxjs';
 import { takeWhile } from 'rxjs/operators';
 
 //emit 1,2,3,4,5
@@ -27,11 +30,14 @@ const subscribe = example.subscribe(val => console.log(val));
 
 ##### Example 2: Difference between takeWhile() and filter()
 
-( [jsBin](http://jsbin.com/yatoqurewi/1/edit?js,console) |
+(
+[StackBlitz](https://stackblitz.com/edit/typescript-roozza?file=index.ts&devtoolsheight=100)
+| [jsBin](http://jsbin.com/yatoqurewi/1/edit?js,console) |
 [jsFiddle](https://jsfiddle.net/r497jgw3/4/) )
 
 ```js
-import { of } from 'rxjs/observable/of';
+// RxJS v6+
+import { of } from 'rxjs';
 import { takeWhile, filter } from 'rxjs/operators';
 
 // emit 3, 3, 3, 9, 1, 4, 5, 8, 96, 3, 66, 3, 3, 3
@@ -41,8 +47,7 @@ const source = of(3, 3, 3, 9, 1, 4, 5, 8, 96, 3, 66, 3, 3, 3);
 // output: [3, 3, 3]
 source
   .pipe(takeWhile(it => it === 3))
-  .subscribe(val => console.log('takeWhile', val))
-
+  .subscribe(val => console.log('takeWhile', val));
 
 // output: [3, 3, 3, 3, 3, 3, 3]
 source
@@ -52,13 +57,13 @@ source
 
 ### Related Recipes
 
-* [Smart Counter](../../recipes/smartcounter.md)
+- [Smart Counter](../../recipes/smartcounter.md)
 
 ### Additional Resources
 
-* [takeWhile](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-takeWhile)
+- [takeWhile](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-takeWhile)
   :newspaper: - Official docs
-* [Completing a stream with takeWhile](https://egghead.io/lessons/rxjs-completing-a-stream-with-takewhile?course=step-by-step-async-javascript-with-rxjs)
+- [Completing a stream with takeWhile](https://egghead.io/lessons/rxjs-completing-a-stream-with-takewhile?course=step-by-step-async-javascript-with-rxjs)
   :video_camera: :dollar: - John Linquist
 
 ---

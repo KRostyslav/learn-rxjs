@@ -4,7 +4,7 @@
 
 ## When source observable completes use [combineLatest](combinelatest.md) with collected observables.
 
-<div class="ua-ad"><a href="https://ultimateangular.com/?ref=76683_kee7y7vk"><img src="https://ultimateangular.com/assets/img/banners/ua-leader.svg"></a></div>
+<div class="ua-ad"><a href="https://ultimatecourses.com/?ref=76683_kee7y7vk"><img src="https://ultimatecourses.com/assets/img/banners/uc-leader.svg" style="width:100%;max-width:100%"></a></div>
 
 ### Examples
 
@@ -14,13 +14,14 @@
 
 ##### Example 1: Mapping to inner interval observable
 
-( [StackBlitz](https://stackblitz.com/edit/typescript-itxyuv?file=index.ts&devtoolsheight=50) |
-[jsBin](http://jsbin.com/cokinogime/edit?js,console) |
-[jsFiddle](https://jsfiddle.net/btroncone/pvj1nbLa/) )
+(
+[StackBlitz](https://stackblitz.com/edit/typescript-fbxfyh?file=index.ts&devtoolsheight=100)
+)
 
 ```js
+// RxJS v6+
 import { take, map, combineAll } from 'rxjs/operators';
-import { interval } from 'rxjs/observable/interval';
+import { interval } from 'rxjs';
 
 //emit every 1s, take 2
 const source = interval(1000).pipe(take(2));

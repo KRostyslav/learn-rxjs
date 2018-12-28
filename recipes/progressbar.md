@@ -6,20 +6,18 @@ This recipe demonstrates the creation of an animated progress bar, simulating
 the management of multiple requests, and updating overall progress as each
 completes.
 
-<div class="ua-ad"><a href="https://ultimateangular.com/?ref=76683_kee7y7vk"><img src="https://ultimateangular.com/assets/img/banners/ua-leader.svg"></a></div>
+<div class="ua-ad"><a href="https://ultimatecourses.com/?ref=76683_kee7y7vk"><img src="https://ultimatecourses.com/assets/img/banners/uc-leader.svg" style="width:100%;max-width:100%"></a></div>
 
 ### Example Code
 
 (
-[StackBlitz](https://stackblitz.com/edit/rxjs-5-progress-bar-x33rrw?file=index.ts&devtoolsheight=50)
+[StackBlitz](https://stackblitz.com/edit/rxjs-5-progress-bar-wxdxwe?file=index.ts&devtoolsheight=50)
 )
 
 ```js
-import { Observable } from 'rxjs/Observable';
-import { of } from 'rxjs/observable/of';
-import { empty } from 'rxjs/observable/empty';
-import { fromEvent } from 'rxjs/observable/fromEvent';
-import { from } from 'rxjs/observable/from';
+import './style.css';
+
+import { Observable, of, empty, fromEvent, from } from 'rxjs';
 import {
   delay,
   switchMapTo,
@@ -59,7 +57,7 @@ const displayData = data => {
   updateContent(`<div class="content-item">${data}</div>`);
 };
 
-// simulate 5 seperate requests that complete at variable length
+// simulate 5 separate requests that complete at variable length
 const observables: Array<Observable<string>> = [
   requestOne,
   requestTwo,
@@ -72,7 +70,10 @@ const array$ = from(observables);
 const requests$ = array$.pipe(concatAll());
 const clicks$ = fromEvent(loadButton, 'click');
 
-const progress$ = clicks$.pipe(switchMapTo(requests$), share());
+const progress$ = clicks$.pipe(
+  switchMapTo(requests$),
+  share()
+);
 
 const count$ = array$.pipe(count());
 
@@ -107,11 +108,11 @@ help with example!_
 
 ### Operators Used
 
-* [concatAll](../operators/transformation/concatall.md)
-* [delay](../operators/utility/delay.md)
-* [fromEvent](../operators/creation/fromevent.md)
-* [from](../operators/creation/from.md)
-* [scan](../operators/transformation/scan.md)
-* [share](../operators/multicasting/share.md)
-* [switchMap](../operators/transformation/switchmap.md)
-* [withLatestFrom](../operators/transformation/withlatestfrom.md)
+- [concatAll](../operators/transformation/concatall.md)
+- [delay](../operators/utility/delay.md)
+- [fromEvent](../operators/creation/fromevent.md)
+- [from](../operators/creation/from.md)
+- [scan](../operators/transformation/scan.md)
+- [share](../operators/multicasting/share.md)
+- [switchMap](../operators/transformation/switchmap.md)
+- [withLatestFrom](../operators/transformation/withlatestfrom.md)

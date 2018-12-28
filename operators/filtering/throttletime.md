@@ -4,17 +4,20 @@
 
 ## Emit latest value when specified duration has passed.
 
-<div class="ua-ad"><a href="https://ultimateangular.com/?ref=76683_kee7y7vk"><img src="https://ultimateangular.com/assets/img/banners/ua-leader.svg"></a></div>
+<div class="ua-ad"><a href="https://ultimatecourses.com/?ref=76683_kee7y7vk"><img src="https://ultimatecourses.com/assets/img/banners/uc-leader.svg" style="width:100%;max-width:100%"></a></div>
 
 ### Examples
 
 ##### Example 1: Receive latest value every 5 seconds
 
-( [jsBin](http://jsbin.com/koqujayizo/1/edit?js,console) |
+(
+[StackBlitz](https://stackblitz.com/edit/typescript-en2zqe?file=index.ts&devtoolsheight=100)
+| [jsBin](http://jsbin.com/koqujayizo/1/edit?js,console) |
 [jsFiddle](https://jsfiddle.net/btroncone/4zysLc3y/) )
 
 ```js
-import { interval } from 'rxjs/observable/interval';
+// RxJS v6+
+import { interval } from 'rxjs';
 import { throttleTime } from 'rxjs/operators';
 
 //emit value every 1 second
@@ -30,12 +33,14 @@ const subscribe = example.subscribe(val => console.log(val));
 
 ##### Example 2: Throttle merged observable
 
-( [jsBin](http://jsbin.com/takipadaza/edit?js,console) |
+(
+[StackBlitz](https://stackblitz.com/edit/typescript-bkcjfj?file=index.ts&devtoolsheight=100)
+| [jsBin](http://jsbin.com/takipadaza/edit?js,console) |
 [jsFiddle](https://jsfiddle.net/btroncone/xhd1zy3m/) )
 
 ```js
-import { interval } from 'rxjs/observable/interval';
-import { merge } from 'rxjs/observable/merge';
+// RxJS v6+
+import { interval, merge } from 'rxjs';
 import { throttleTime, ignoreElements } from 'rxjs/operators';
 
 const source = merge(
@@ -50,11 +55,16 @@ const example = source.pipe(throttleTime(1200));
 const subscribe = example.subscribe(val => console.log(val));
 ```
 
+### Related Recipes
+
+- [Horizontal Scroll Indicator](../../recipes/horizontal-scroll-indicator.md)
+- [Type Ahead](../../recipes/type-ahead.md)
+
 ### Additional Resources
 
-* [throttleTime](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-throttleTime)
+- [throttleTime](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-throttleTime)
   :newspaper: - Official docs
-* [Filtering operator: throttle and throttleTime](https://egghead.io/lessons/rxjs-filtering-operators-throttle-and-throttletime?course=rxjs-beyond-the-basics-operators-in-depth)
+- [Filtering operator: throttle and throttleTime](https://egghead.io/lessons/rxjs-filtering-operators-throttle-and-throttletime?course=rxjs-beyond-the-basics-operators-in-depth)
   :video_camera: :dollar: - André Staltz
 
 ---

@@ -4,7 +4,14 @@
 
 ## Let me have the whole observable.
 
-<div class="ua-ad"><a href="https://ultimateangular.com/?ref=76683_kee7y7vk"><img src="https://ultimateangular.com/assets/img/banners/ua-leader.svg"></a></div>
+---
+
+:warning: `let` is no longer available, or necessary, with pipeable operators!
+(RxJS 5.5+)
+
+---
+
+<div class="ua-ad"><a href="https://ultimatecourses.com/?ref=76683_kee7y7vk"><img src="https://ultimatecourses.com/assets/img/banners/uc-leader.svg" style="width:100%;max-width:100%"></a></div>
 
 ### Examples
 
@@ -109,7 +116,7 @@ const subscribe = obsArrayPlusYourOperators(addTenThenTwenty)
 
 ### Additional Resources
 
-* [let](https://github.com/Reactive-Extensions/RxJS/blob/master/doc/api/core/operators/let.md)
+- [let](https://github.com/Reactive-Extensions/RxJS/blob/master/doc/api/core/operators/let.md)
   :newspaper: - Official docs
 
 ---

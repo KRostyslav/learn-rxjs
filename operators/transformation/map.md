@@ -4,18 +4,19 @@
 
 ## Apply projection with each value from source.
 
-<div class="ua-ad"><a href="https://ultimateangular.com/?ref=76683_kee7y7vk"><img src="https://ultimateangular.com/assets/img/banners/ua-leader.svg"></a></div>
+<div class="ua-ad"><a href="https://ultimatecourses.com/?ref=76683_kee7y7vk"><img src="https://ultimatecourses.com/assets/img/banners/uc-leader.svg" style="width:100%;max-width:100%"></a></div>
 
 ### Examples
 
 ##### Example 1: Add 10 to each number
 
-( [StackBlitz](https://stackblitz.com/edit/typescript-s7jb9n?file=index.ts&devtoolsheight=50) |
+( [StackBlitz](https://stackblitz.com/edit/typescript-a7bnxb?file=index.ts&devtoolsheight=100) |
 [jsBin](http://jsbin.com/padasukano/1/edit?js,console) |
 [jsFiddle](https://jsfiddle.net/btroncone/yd38awLa/) )
 
 ```js
-import { from } from 'rxjs/observable/from';
+// RxJS v6+
+import { from } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 //emit (1,2,3,4,5)
@@ -28,12 +29,13 @@ const subscribe = example.subscribe(val => console.log(val));
 
 ##### Example 2: Map to single property
 
-( [StackBlitz](https://stackblitz.com/edit/typescript-6ynh1a?file=index.ts&devtoolsheight=50) |
+( [StackBlitz](https://stackblitz.com/edit/typescript-qgpnju?file=index.ts&devtoolsheight=100) |
 [jsBin](http://jsbin.com/detozumale/1/edit?js,console) |
 [jsFiddle](https://jsfiddle.net/btroncone/tdLd5tgc/) )
 
 ```js
-import { from } from 'rxjs/observable/from';
+// RxJS v6+
+import { from } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 //emit ({name: 'Joe', age: 30}, {name: 'Frank', age: 20},{name: 'Ryan', age: 50})
@@ -50,9 +52,10 @@ const subscribe = example.subscribe(val => console.log(val));
 
 ### Related Recipes
 
-* [Smart Counter](../../recipes/smartcounter.md)
-* [Game Loop](../../recipes/gameloop.md)
-* [HTTP Polling](../../recipes/http-polling.md)
+- [Smart Counter](../../recipes/smartcounter.md)
+- [Game Loop](../../recipes/gameloop.md)
+- [HTTP Polling](../../recipes/http-polling.md)
+- [Type Ahead](../../recipes/type-ahead.md)
 
 ### Additional Resources
 

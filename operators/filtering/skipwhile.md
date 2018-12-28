@@ -4,17 +4,20 @@
 
 ## Skip emitted values from source until provided expression is false.
 
-<div class="ua-ad"><a href="https://ultimateangular.com/?ref=76683_kee7y7vk"><img src="https://ultimateangular.com/assets/img/banners/ua-leader.svg"></a></div>
+<div class="ua-ad"><a href="https://ultimatecourses.com/?ref=76683_kee7y7vk"><img src="https://ultimatecourses.com/assets/img/banners/uc-leader.svg" style="width:100%;max-width:100%"></a></div>
 
 ### Examples
 
 ##### Example 1: Skip while values below threshold
 
-( [jsBin](http://jsbin.com/bemikuleya/edit?js,console) |
+(
+[StackBlitz](https://stackblitz.com/edit/typescript-p5kapz?file=index.ts&devtoolsheight=100)
+| [jsBin](http://jsbin.com/bemikuleya/edit?js,console) |
 [jsFiddle](https://jsfiddle.net/btroncone/3ymfxb09/) )
 
 ```js
-import { interval } from 'rxjs/observable/interval';
+// RxJS v6+
+import { interval } from 'rxjs';
 import { skipWhile } from 'rxjs/operators';
 
 //emit every 1s
@@ -27,7 +30,7 @@ const subscribe = example.subscribe(val => console.log(val));
 
 ### Additional Resources
 
-* [skipWhile](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-skipWhile)
+- [skipWhile](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-skipWhile)
   :newspaper: - Official docs
 
 ---

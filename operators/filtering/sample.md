@@ -4,36 +4,40 @@
 
 ## Sample from source when provided observable emits.
 
-<div class="ua-ad"><a href="https://ultimateangular.com/?ref=76683_kee7y7vk"><img src="https://ultimateangular.com/assets/img/banners/ua-leader.svg"></a></div>
+<div class="ua-ad"><a href="https://ultimatecourses.com/?ref=76683_kee7y7vk"><img src="https://ultimatecourses.com/assets/img/banners/uc-leader.svg" style="width:100%;max-width:100%"></a></div>
 
 ### Examples
 
 ##### Example 1: Sample source every 2 seconds
 
-( [jsBin](http://jsbin.com/gemebopifu/1/edit?js,console) |
+(
+[StackBlitz](https://stackblitz.com/edit/typescript-envpsp?file=index.ts&devtoolsheight=100)
+| [jsBin](http://jsbin.com/gemebopifu/1/edit?js,console) |
 [jsFiddle](https://jsfiddle.net/btroncone/8wsbuvjb/) )
 
 ```js
-import { interval } from 'rxjs/observable/interval';
+// RxJS v6+
+import { interval } from 'rxjs';
 import { sample } from 'rxjs/operators';
 
 //emit value every 1s
 const source = interval(1000);
 //sample last emitted value from source every 2s
-const example = source.sample.pipe(interval(2000));
+const example = source.pipe(sample(interval(2000)));
 //output: 2..4..6..8..
 const subscribe = example.subscribe(val => console.log(val));
 ```
 
 ##### Example 2: Sample source when interval emits
 
-( [jsBin](http://jsbin.com/cunicepube/1/edit?js,console) |
+(
+[StackBlitz](https://stackblitz.com/edit/typescript-sgat7t?file=index.ts&devtoolsheight=100)
+| [jsBin](http://jsbin.com/cunicepube/1/edit?js,console) |
 [jsFiddle](https://jsfiddle.net/btroncone/b33kg9dn/) )
 
 ```js
-import { interval } from 'rxjs/observable/interval';
-import { zip } from 'rxjs/observable/zip';
-import { from } from 'rxjs/observable/from';
+// RxJS v6+
+import { interval, zip, from } from 'rxjs';
 import { sample } from 'rxjs/operators';
 
 const source = zip(
@@ -53,26 +57,29 @@ const subscribe = example.subscribe(val => console.log(val));
 From [Stack Overflow](https://stackoverflow.com/a/44865892/2774547) By
 [Dorus](https://stackoverflow.com/users/402027/dorus)
 
-( [jsBin](http://jsbin.com/riwipicilo/1/edit?html,js,console,output) |
+(
+[StackBlitz](https://stackblitz.com/edit/typescript-vk8p3e?file=index.ts&devtoolsheight=100)
+| [jsBin](http://jsbin.com/riwipicilo/1/edit?html,js,console,output) |
 [jsFiddle](https://jsfiddle.net/6yy6q0Lo/1/) )
 
 ```js
-import { fromEvent } from 'rxjs/observable/interval';
+// RxJS v6+
+import { fromEvent, merge } from 'rxjs';
 import { sample, mapTo } from 'rxjs/operators';
 
 const listener = merge(
-    fromEvent(element, 'mousedown').mapTo(false),
-    fromEvent(element, 'mousemove').mapTo(true)
-  )
-  .pipe(sample(fromEvent(element, 'mouseup')))
+  fromEvent(document, 'mousedown').pipe(mapTo(false)),
+  fromEvent(document, 'mousemove').pipe(mapTo(true))
+)
+  .pipe(sample(fromEvent(document, 'mouseup')))
   .subscribe(isDragging => {
     console.log('Were you dragging?', isDragging);
-  })
+  });
 ```
 
 ### Additional Resources
 
-* [sample](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-sample)
+- [sample](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-sample)
   :newspaper: - Official docs
 
 ---

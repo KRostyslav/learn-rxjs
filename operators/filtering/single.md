@@ -4,17 +4,20 @@
 
 ## Emit single item that passes expression.
 
-<div class="ua-ad"><a href="https://ultimateangular.com/?ref=76683_kee7y7vk"><img src="https://ultimateangular.com/assets/img/banners/ua-leader.svg"></a></div>
+<div class="ua-ad"><a href="https://ultimatecourses.com/?ref=76683_kee7y7vk"><img src="https://ultimatecourses.com/assets/img/banners/uc-leader.svg" style="width:100%;max-width:100%"></a></div>
 
 ### Examples
 
 ##### Example 1: Emit first number passing predicate
 
-( [jsBin](http://jsbin.com/solecibuza/1/edit?js,console) |
+(
+[StackBlitz](https://stackblitz.com/edit/typescript-qhynlr?file=index.ts&devtoolsheight=100)
+| [jsBin](http://jsbin.com/solecibuza/1/edit?js,console) |
 [jsFiddle](https://jsfiddle.net/btroncone/26r5y90s/) )
 
 ```js
-import { from } from 'rxjs/observable/from';
+// RxJS v6+
+import { from } from 'rxjs';
 import { single } from 'rxjs/operators';
 
 //emit (1,2,3,4,5)
@@ -27,7 +30,7 @@ const subscribe = example.subscribe(val => console.log(val));
 
 ### Additional Resources
 
-* [single](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-single)
+- [single](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-single)
   :newspaper: - Official docs
 
 ---

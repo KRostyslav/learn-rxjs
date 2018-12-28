@@ -11,16 +11,19 @@ scan!
 
 ---
 
-<div class="ua-ad"><a href="https://ultimateangular.com/?ref=76683_kee7y7vk"><img src="https://ultimateangular.com/assets/img/banners/ua-leader.svg"></a></div>
+<div class="ua-ad"><a href="https://ultimatecourses.com/?ref=76683_kee7y7vk"><img src="https://ultimatecourses.com/assets/img/banners/uc-leader.svg" style="width:100%;max-width:100%"></a></div>
 
 ### Examples
 
 ##### Example 1: Sum over time
 
-( [StackBlitz](https://stackblitz.com/edit/typescript-jkisea?file=index.ts&devtoolsheight=50) )
+(
+[StackBlitz](https://stackblitz.com/edit/typescript-ltcl9d?file=index.ts&devtoolsheight=100)
+)
 
 ```js
-import { of } from 'rxjs/observable/of';
+// RxJS v6+
+import { of } from 'rxjs';
 import { scan } from 'rxjs/operators';
 
 const source = of(1, 2, 3);
@@ -33,12 +36,14 @@ const subscribe = example.subscribe(val => console.log(val));
 
 ##### Example 2: Accumulating an object
 
-( [StackBlitz](https://stackblitz.com/edit/typescript-pjmrta?file=index.ts&devtoolsheight=50) |
-[jsBin](http://jsbin.com/fusunoguqu/1/edit?js,console) |
+(
+[StackBlitz](https://stackblitz.com/edit/typescript-vu63kz?file=index.ts&devtoolsheight=100)
+| [jsBin](http://jsbin.com/fusunoguqu/1/edit?js,console) |
 [jsFiddle](https://jsfiddle.net/btroncone/36rbu38b/) )
 
 ```js
-import { Subject } from 'rxjs/Subject';
+// RxJS v6+
+import { Subject } from 'rxjs';
 import { scan } from 'rxjs/operators';
 
 const subject = new Subject();
@@ -61,10 +66,13 @@ subject.next({ favoriteLanguage: 'JavaScript' });
 
 ##### Example 3: Emitting random values from the accumulated array.
 
-( [StackBlitz](https://stackblitz.com/edit/typescript-sxhtbf?file=index.ts&devtoolsheight=50) )
+(
+[StackBlitz](https://stackblitz.com/edit/typescript-lb8aw9?file=index.ts&devtoolsheight=100)
+)
 
 ```js
-import { interval } from 'rxjs/observable/interval';
+// RxJS v6+
+import { interval } from 'rxjs';
 import { scan, map, distinctUntilChanged } from 'rxjs/operators';
 
 // Accumulate values in an array, emit random values from this array.
@@ -77,20 +85,48 @@ const scanObs = interval(1000)
   .subscribe(console.log);
 ```
 
+##### Example 4: Accumulating http responses over time
+
+(
+[StackBlitz](https://stackblitz.com/edit/rxjs-scan-accumulate-request-responses?file=index.ts&devtoolsheight=100)
+)
+
+```js
+// RxJS v6+
+import { interval, of } from 'rxjs';
+import { scan, delay, repeat, mergeMap } from 'rxjs/operators';
+
+const fakeRequest = of('response').pipe(delay(2000));
+
+// output: 
+// ['response'],
+// ['response','response'],
+// ['response','response','response'],
+// etc...
+
+interval(1000)
+  .pipe(
+    mergeMap(_ => fakeRequest),
+    scan<string>((allResponses, currentResponse) => 
+      [...allResponses, currentResponse], []),
+  )
+  .subscribe(console.log);
+```
+
 ### Related Recipes
 
-* [Smart Counter](../../recipes/smartcounter.md)
-* [Progress Bar](../../recipes/progressbar.md)
+- [Smart Counter](../../recipes/smartcounter.md)
+- [Progress Bar](../../recipes/progressbar.md)
 
 ### Additional Resources
 
-* [scan](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-scan)
+- [scan](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-scan)
   :newspaper: - Official docs
-* [Aggregating streams with reduce and scan using RxJS](https://egghead.io/lessons/rxjs-aggregating-streams-with-reduce-and-scan-using-rxjs)
+- [Aggregating streams with reduce and scan using RxJS](https://egghead.io/lessons/rxjs-aggregating-streams-with-reduce-and-scan-using-rxjs)
   :video_camera: - Ben Lesh
-* [Updating data with scan](https://egghead.io/lessons/rxjs-updating-data-with-scan?course=step-by-step-async-javascript-with-rxjs)
+- [Updating data with scan](https://egghead.io/lessons/rxjs-updating-data-with-scan?course=step-by-step-async-javascript-with-rxjs)
   :video_camera: :dollar: - John Linquist
-* [Transformation operator: scan](https://egghead.io/lessons/rxjs-transformation-operator-scan?course=rxjs-beyond-the-basics-operators-in-depth)
+- [Transformation operator: scan](https://egghead.io/lessons/rxjs-transformation-operator-scan?course=rxjs-beyond-the-basics-operators-in-depth)
   :video_camera: :dollar: - André Staltz
 
 ---

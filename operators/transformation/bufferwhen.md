@@ -4,17 +4,18 @@
 
 ## Collect all values until closing selector emits, emit buffered values.
 
-<div class="ua-ad"><a href="https://ultimateangular.com/?ref=76683_kee7y7vk"><img src="https://ultimateangular.com/assets/img/banners/ua-leader.svg"></a></div>
+<div class="ua-ad"><a href="https://ultimatecourses.com/?ref=76683_kee7y7vk"><img src="https://ultimatecourses.com/assets/img/banners/uc-leader.svg" style="width:100%;max-width:100%"></a></div>
 
 ### Examples
 
 ##### Example 1: Emit buffer based on interval
 
-( [StackBlitz](https://stackblitz.com/edit/typescript-mn6za1?file=index.ts&devtoolsheight=50) | [jsBin](http://jsbin.com/vugerupube/1/edit?js,console) |
+( [StackBlitz](https://stackblitz.com/edit/typescript-f4a2fu?file=index.ts&devtoolsheight=10) | [jsBin](http://jsbin.com/vugerupube/1/edit?js,console) |
 [jsFiddle](https://jsfiddle.net/btroncone/nr9agfuL/) )
 
 ```js
-import { interval } from 'rxjs/observable/interval';
+// RxJS v6+
+import { interval } from 'rxjs';
 import { bufferWhen } from 'rxjs/operators';
 
 //emit value every 1 second

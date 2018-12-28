@@ -4,7 +4,7 @@
 
 ## Subscribe to provided observable when previous completes, emit values.
 
-<div class="ua-ad"><a href="https://ultimateangular.com/?ref=76683_kee7y7vk"><img src="https://ultimateangular.com/assets/img/banners/ua-leader.svg"></a></div>
+<div class="ua-ad"><a href="https://ultimatecourses.com/?ref=76683_kee7y7vk"><img src="https://ultimatecourses.com/assets/img/banners/uc-leader.svg" style="width:100%;max-width:100%"></a></div>
 
 ### Examples
 
@@ -13,8 +13,8 @@
 ( [StackBlitz](https://stackblitz.com/edit/typescript-fkkh6c?file=index.ts&devtoolsheight=50) )
 
 ```js
-import { of } from 'rxjs/observable/of';
-import { interval } from 'rxjs/observable/interval';
+// RxJS v6+
+import { of, interval } from 'rxjs';
 import { concatMapTo, delay, take } from 'rxjs/operators';
 
 //emit value every 2 seconds
@@ -29,15 +29,16 @@ const subscribe = example.subscribe(val => console.log(val));
 
 ##### Example 2: Using projection with `concatMap`
 
-( [StackBlitz](https://stackblitz.com/edit/typescript-4udcui?file=index.ts&devtoolsheight=50) |
+( [StackBlitz](https://stackblitz.com/edit/typescript-8kcfm1?file=index.ts&devtoolsheight=100) |
 [jsBin](http://jsbin.com/fogefebisu/1/edit?js,console) |
 [jsFiddle](https://jsfiddle.net/btroncone/s19wtscb/) )
 
 ```js
-import { interval } from 'rxjs/observable/interval';
+// RxJS v6+
+import { interval } from 'rxjs';
 import { concatMapTo, take } from 'rxjs/operators';
 //emit value every 2 seconds
-const interval = interval(2000);
+const interval$ = interval(2000);
 //emit value every second for 5 seconds
 const source = interval(1000).pipe(take(5));
 /*
@@ -46,7 +47,7 @@ const source = interval(1000).pipe(take(5));
   (interval emits every 1 second, basicTimer completes every 5)
 */
 // basicTimer will complete after 5 seconds, emitting 0,1,2,3,4
-const example = interval.pipe(
+const example = interval$.pipe(
   concatMapTo(
     source,
     (firstInterval, secondInterval) => `${firstInterval} ${secondInterval}`
